@@ -45,7 +45,7 @@ Citizen.prototype.introduce = function () {
     case 'kz': message = 'Kazakhstan';
     break;
   }
-  message += "that is country I have citizenship in";
+  message += " - that's a country I have citizenship in";
   console.log(message);
 };
 
@@ -65,11 +65,11 @@ Citizen.prototype.monthCosts = function () {
     var summ = (taxiCost + breakfast + lunch + dinner + sigarettes + internetTv + utilities + rest + coursesJs + coursesEng)/usdToSomCourse;
     return summ;
   }
-  var finalCosts = '$' +  Math.round(costs());
+  var finalCosts = Math.round(costs());
   //here your code
   //citizen should say how much does he spent every month
   //eg: (dinner + breakfast) * 31
-  console.log("I spend " + finalCosts + " dollars every month");
+  console.log(`I spend $${finalCosts} dollars every month`);
 };
 
 function Student(age, name, citizenship, monthlyPay) {
@@ -88,10 +88,10 @@ Student.prototype.introduce = function () {
   //student should say on which level he/she is
   //I am a student of a high school
   if (age && (age<17)) {
-    message = "I am a student of a high school";
+    message = "I am a student of school";
   }
-  else if (age && (age>17)) {
-    message = "I am a student of a university";
+  else if (age && (age>=17 && age<26)) {
+    message = "I am a student of university";
   }
   else if (!age) {
     message = "I've not born yet!";
@@ -119,17 +119,17 @@ Student.prototype.shouldPayPerMonth = function () {
 
 Student.prototype.shouldBePayedBack = function () {
   var monthlyPay = this.monthlyPay;
-  var receive = true;
+  var payBack = true;
   var courseDuration = 9;
   var receivedMoney = +monthlyPay*courseDuration/2;
   var message;
 
   //here your code
   //and how much he will received by end of a course
-  if (monthlyPay && receive) {
+  if (monthlyPay && payBack) {
     message = "I will be received back $" + receivedMoney;
   }
-  else if (monthlyPay && !receive) {
+  else if (monthlyPay) {
     message = `I will not be received any money`;
   }
   else {
@@ -144,6 +144,20 @@ student.introduce();
 student.monthCosts();
 student.shouldPayPerMonth();
 student.shouldBePayedBack();
-for (var i = 1; i; i++) {
-  console.log(i);
-}
+
+var arr = [1,2,3,4,5];
+var arr2 = [...arr];
+console.log(arr2);
+
+
+
+
+
+
+
+
+
+
+
+
+
